@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import WaitlistForm from './components/WaitlistForm';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
   const [calculatorState, setCalculatorState] = useState<LoanData>({
@@ -49,6 +50,9 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Static WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 }

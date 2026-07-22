@@ -72,17 +72,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
 
         // Open WhatsApp message directly to +57 3169008561
         const waNumber = '573169008561';
-        const waMessage = `¡Hola CrediULEP! Solicito la activación de mi Pre-Aprobación Express:
-
-📋 Folio: #CO-${generatedFolio}
-👤 Solicitante: ${name}
-📧 Email: ${email}
-📱 Teléfono/WhatsApp: ${phone}
-👥 Vínculo: ${relation}
-💳 Desembolso: ${paymentMethod}
-💰 Monto Solicitado: ${formatCurrency(loanAmount)}
-⏱️ Plazo: ${getTermLabel(loanTermDays)}
-📊 Total Estimado a Pagar: ${formatCurrency(totalToPay)} (2.5% interés mes)`;
+        const waMessage = 'Hola CrediULEP, quisiera solicitar información sobre la pre-aprobación de mi crédito express.';
 
         const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
         window.open(waUrl, '_blank');
@@ -442,7 +432,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
 
                   <a
                     href={`https://wa.me/573169008561?text=${encodeURIComponent(
-                      `¡Hola CrediULEP! Solicito la activación de mi Pre-Aprobación Express:\n\n📋 Folio: #CO-${folioNumber}\n👤 Solicitante: ${name}\n📧 Email: ${email}\n📱 Teléfono/WhatsApp: ${phone}\n👥 Vínculo: ${relation}\n💳 Desembolso: ${paymentMethod}\n💰 Monto Solicitado: ${formatCurrency(loanAmount)}\n⏱️ Plazo: ${getTermLabel(loanTermDays)}\n📊 Total Estimado a Pagar: ${formatCurrency(totalToPay)} (2.5% interés mes)`
+                      'Hola CrediULEP, quisiera solicitar información sobre la pre-aprobación de mi crédito express.'
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -41,6 +41,19 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href={`https://wa.me/573169008561?text=${encodeURIComponent(
+                    'Hola CrediULEP, quisiera solicitar información sobre la pre-aprobación de mi crédito express.'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors text-emerald-400 font-extrabold flex items-center gap-1.5"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  WhatsApp: +57 316 900 8561
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://groupulep.github.io/credito/"
                   target="_blank"
                   rel="noopener noreferrer"
