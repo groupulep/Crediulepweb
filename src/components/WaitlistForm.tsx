@@ -96,13 +96,13 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
   return (
     <section id="solicitud" className="py-16 bg-transparent relative scroll-mt-20">
       <div className="max-w-3xl mx-auto px-6">
-        <div className="bg-white/80 backdrop-blur-xl border border-white/90 shadow-2xl shadow-purple-900/5 rounded-[36px] overflow-hidden">
+        <div className="bg-white border border-white/80 shadow-2xl shadow-black/25 rounded-[36px] overflow-hidden text-[#191919]">
           {/* Progress Bar Top */}
           {step < 3 && (
-            <div className="w-full h-2 bg-purple-50 flex">
+            <div className="w-full h-2 bg-[#f3e8ff] flex">
               <div
                 style={{ width: `${(step / 2) * 100}%` }}
-                className="h-full bg-purple-600 transition-all duration-500"
+                className="h-full bg-[#820ad1] transition-all duration-500"
               />
             </div>
           )}
@@ -111,16 +111,16 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
             {step < 3 && (
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-[10px] font-bold text-purple-700 uppercase tracking-widest bg-purple-50 px-3 py-1.5 rounded-full border border-purple-100 flex items-center gap-1">
-                    <Zap className="w-3 h-3 text-purple-600 fill-purple-600" />
+                  <span className="text-[10px] font-bold text-[#820ad1] uppercase tracking-widest bg-[#f3e8ff] px-3 py-1.5 rounded-full border border-[#820ad1]/20 flex items-center gap-1">
+                    <Zap className="w-3 h-3 text-[#820ad1] fill-[#820ad1]" />
                     Pre-Aprobación Express — Paso {step} de 2
                   </span>
-                  <span className="text-xs text-purple-950 font-bold">
+                  <span className="text-xs text-[#191919] font-bold">
                     {step === 1 && 'Configuración de Crédito'}
                     {step === 2 && 'Datos del Acreditado'}
                   </span>
                 </div>
-                <hr className="border-purple-100/60" />
+                <hr className="border-[#820ad1]/10" />
               </div>
             )}
 
@@ -128,9 +128,9 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
             {step === 1 && (
               <div className="space-y-6 animate-in fade-in duration-300">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-extrabold text-purple-950 font-display">Pre-Aprobación Express</h3>
+                  <h3 className="text-2xl font-extrabold text-[#191919] font-display">Pre-Aprobación Express</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Ajusta el monto y el plazo deseado. Disfruta de la tasa fija preferencial del <strong className="text-purple-700">2.5% mensual</strong>.
+                    Ajusta el monto y el plazo deseado. Disfruta de la tasa fija preferencial del <strong className="text-[#820ad1]">2.5% mensual</strong>.
                   </p>
                 </div>
 
@@ -143,8 +143,8 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                         onClick={() => setLoanAmount(amt)}
                         className={`py-2.5 px-2 rounded-2xl text-xs font-bold transition-all border cursor-pointer text-center ${
                           loanAmount === amt
-                            ? 'bg-purple-600 border-purple-600 text-white shadow-md shadow-purple-200'
-                            : 'bg-white border-slate-200 text-purple-950 hover:bg-purple-50'
+                            ? 'bg-[#820ad1] border-[#820ad1] text-white shadow-md shadow-[#820ad1]/20'
+                            : 'bg-white border-slate-200 text-[#191919] hover:bg-[#f3e8ff] hover:border-[#820ad1]/30'
                         }`}
                       >
                         {formatCurrency(amt)}
@@ -154,9 +154,9 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
 
                   {/* Manual Amount Slider */}
                   <div className="space-y-2">
-                    <div className="flex justify-between text-xs text-purple-950 font-bold">
+                    <div className="flex justify-between text-xs text-[#191919] font-bold">
                       <span>Monto Solicitado</span>
-                      <span className="text-purple-700 font-mono text-sm bg-purple-50 border border-purple-100 px-3 py-0.5 rounded-xl">
+                      <span className="text-[#820ad1] font-mono text-sm bg-[#f3e8ff] border border-[#820ad1]/20 px-3 py-0.5 rounded-xl">
                         {formatCurrency(loanAmount)}
                       </span>
                     </div>
@@ -167,7 +167,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                       step="100000"
                       value={loanAmount}
                       onChange={(e) => setLoanAmount(Number(e.target.value))}
-                      className="w-full h-2 bg-purple-100 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                      className="w-full h-2 bg-[#f3e8ff] rounded-lg appearance-none cursor-pointer accent-[#820ad1]"
                     />
                     <div className="flex justify-between text-[10px] text-slate-400 font-semibold">
                       <span>$100.000</span>
@@ -186,8 +186,8 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           onClick={() => setLoanTermDays(days)}
                           className={`py-2.5 px-1 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center ${
                             loanTermDays === days
-                              ? 'bg-purple-600 border-purple-600 text-white shadow-sm'
-                              : 'bg-white border-slate-200 text-slate-700 hover:border-purple-200'
+                              ? 'bg-[#820ad1] border-[#820ad1] text-white shadow-sm'
+                              : 'bg-white border-slate-200 text-slate-700 hover:border-[#820ad1]/30'
                           }`}
                         >
                           {days === 30 ? '1 Mes' : `${days} Días`}
@@ -197,19 +197,19 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                   </div>
 
                   {/* Realtime Estimate Pill */}
-                  <div className="bg-purple-50 p-4 rounded-2xl border border-purple-100 flex justify-between items-center gap-4">
+                  <div className="bg-[#f8f0fc] p-4 rounded-2xl border border-[#e8d8fa] flex justify-between items-center gap-4">
                     <div>
-                      <span className="text-[10px] text-purple-800 font-bold uppercase tracking-wider block">
+                      <span className="text-[10px] text-[#820ad1] font-bold uppercase tracking-wider block">
                         Total Estimado a Pagar ({getTermLabel(loanTermDays)})
                       </span>
-                      <span className="text-xl font-black text-purple-950 font-mono block">
+                      <span className="text-xl font-black text-[#191919] font-mono block">
                         {formatCurrency(totalToPay)}
                       </span>
                       <span className="text-[10px] text-slate-500 block mt-0.5">
                         Interés fijo: {formatCurrency(totalInterest)}
                       </span>
                     </div>
-                    <span className="text-xs font-bold text-purple-700 bg-white border border-purple-200 px-3 py-1.5 rounded-xl shadow-sm text-center">
+                    <span className="text-xs font-bold text-[#820ad1] bg-white border border-[#820ad1]/20 px-3 py-1.5 rounded-xl shadow-sm text-center">
                       2.5% Tasa Fija
                     </span>
                   </div>
@@ -221,7 +221,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
             {step === 2 && (
               <div className="space-y-6 animate-in fade-in duration-300">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-extrabold text-purple-950 font-display">Datos del Solicitante</h3>
+                  <h3 className="text-2xl font-extrabold text-[#191919] font-display">Datos del Solicitante</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
                     Ingresa tus datos personales para emitir tu certificado de pre-aprobación express inmediata en Colombia.
                   </p>
@@ -232,7 +232,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">Nombre Completo</label>
                     <div className="relative">
-                      <User className="absolute left-3.5 top-3.5 w-4 h-4 text-purple-400" />
+                      <User className="absolute left-3.5 top-3.5 w-4 h-4 text-[#820ad1]" />
                       <input
                         type="text"
                         placeholder="Ej. Carlos Andrés Gómez"
@@ -241,7 +241,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           setName(e.target.value);
                           if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
                         }}
-                        className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600/20 focus:border-purple-600 text-purple-950 ${
+                        className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-[#820ad1]/20 focus:border-[#820ad1] text-[#191919] ${
                           errors.name ? 'border-red-400' : 'border-slate-200'
                         }`}
                       />
@@ -253,7 +253,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">Correo Electrónico</label>
                     <div className="relative">
-                      <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-purple-400" />
+                      <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-[#820ad1]" />
                       <input
                         type="email"
                         placeholder="Ej. carlos.gomez@ejemplo.com"
@@ -262,7 +262,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           setEmail(e.target.value);
                           if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
                         }}
-                        className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600/20 focus:border-purple-600 text-purple-950 ${
+                        className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-[#820ad1]/20 focus:border-[#820ad1] text-[#191919] ${
                           errors.email ? 'border-red-400' : 'border-slate-200'
                         }`}
                       />
@@ -274,7 +274,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">Teléfono / WhatsApp</label>
                     <div className="relative">
-                      <Phone className="absolute left-3.5 top-3.5 w-4 h-4 text-purple-400" />
+                      <Phone className="absolute left-3.5 top-3.5 w-4 h-4 text-[#820ad1]" />
                       <input
                         type="tel"
                         placeholder="Ej. +57 300 123 4567"
@@ -283,7 +283,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           setPhone(e.target.value);
                           if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
                         }}
-                        className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600/20 focus:border-purple-600 text-purple-950 ${
+                        className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-[#820ad1]/20 focus:border-[#820ad1] text-[#191919] ${
                           errors.phone ? 'border-red-400' : 'border-slate-200'
                         }`}
                       />
@@ -302,8 +302,8 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           onClick={() => setRelation(rel)}
                           className={`py-2 px-1 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center ${
                             relation === rel
-                              ? 'bg-purple-600 border-purple-600 text-white shadow-sm'
-                              : 'bg-white border-slate-200 text-slate-700 hover:border-purple-200'
+                              ? 'bg-[#820ad1] border-[#820ad1] text-white shadow-sm'
+                              : 'bg-white border-slate-200 text-slate-700 hover:border-[#820ad1]/30'
                           }`}
                         >
                           {rel}
@@ -323,11 +323,11 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           onClick={() => setPaymentMethod(pm.id)}
                           className={`p-3 rounded-2xl border text-left space-y-1 transition-all cursor-pointer ${
                             paymentMethod === pm.id
-                              ? 'border-purple-600 bg-purple-50/80 shadow-sm'
-                              : 'border-slate-200 bg-white hover:border-purple-200'
+                              ? 'border-[#820ad1] bg-[#f8f0fc] shadow-sm'
+                              : 'border-slate-200 bg-white hover:border-[#820ad1]/30'
                           }`}
                         >
-                          <span className="text-xs font-bold text-purple-950 block">{pm.label}</span>
+                          <span className="text-xs font-bold text-[#191919] block">{pm.label}</span>
                           <span className="text-[10px] text-slate-500 block leading-tight">{pm.desc}</span>
                         </button>
                       ))}
@@ -344,7 +344,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                           setTerms(e.target.checked);
                           if (errors.terms) setErrors((prev) => ({ ...prev, terms: undefined }));
                         }}
-                        className="mt-1 accent-purple-600 rounded cursor-pointer"
+                        className="mt-1 accent-[#820ad1] rounded cursor-pointer"
                       />
                       <span className="text-xs text-slate-500 leading-relaxed">
                         Acepto los Términos de Servicio y la Política de Privacidad de **CrediULEP Colombia**. Entiendo que este es un trámite de pre-aprobación express.
@@ -359,75 +359,75 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
             {/* STEP 3: PRE-APPROVAL TICKET */}
             {step === 3 && (
               <div className="text-center space-y-8 animate-in zoom-in-95 duration-300">
-                <div className="w-16 h-16 rounded-3xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto shadow-md">
+                <div className="w-16 h-16 rounded-3xl bg-[#f3e8ff] text-[#820ad1] flex items-center justify-center mx-auto shadow-md">
                   <Sparkles className="w-8 h-8 animate-pulse" />
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-black text-purple-950 font-display">¡Crédito Pre-Aprobado!</h3>
+                  <h3 className="text-2xl font-black text-[#191919] font-display">¡Crédito Pre-Aprobado!</h3>
                   <p className="text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
-                    Felicidades, <strong className="text-purple-950">{name}</strong>. Tu pre-aprobación express en CrediULEP Colombia ha sido procesada exitosamente.
+                    Felicidades, <strong className="text-[#191919]">{name}</strong>. Tu pre-aprobación express en CrediULEP Colombia ha sido procesada exitosamente.
                   </p>
                 </div>
 
-                {/* Digital Folio Ticket */}
-                <div className="max-w-sm mx-auto bg-gradient-to-br from-purple-900 via-indigo-950 to-purple-950 text-white rounded-3xl p-6 relative shadow-2xl overflow-hidden border border-purple-800 text-left space-y-5">
+                {/* Digital Folio Ticket - Signature Nu Dark Purple Card */}
+                <div className="max-w-sm mx-auto bg-gradient-to-br from-[#24033b] via-[#4c0677] to-[#820ad1] text-white rounded-3xl p-6 relative shadow-2xl overflow-hidden border border-[#820ad1]/40 text-left space-y-5">
                   <div className="flex justify-between items-center border-b border-white/10 pb-3">
                     <div>
-                      <span className="text-[9px] uppercase tracking-widest text-purple-300 block font-semibold">CrediULEP</span>
+                      <span className="text-[9px] uppercase tracking-widest text-purple-200 block font-semibold">CrediULEP</span>
                       <span className="font-extrabold text-sm text-white">Pre-Aprobación Express</span>
                     </div>
                     <div className="text-right">
-                      <span className="text-[9px] text-purple-300 block">Folio Digital</span>
+                      <span className="text-[9px] text-purple-200 block">Folio Digital</span>
                       <span className="font-mono font-bold text-sm text-emerald-400">#CO-{folioNumber}</span>
                     </div>
                   </div>
 
                   <div className="space-y-3 text-xs">
                     <div className="flex justify-between">
-                      <span className="opacity-60">Solicitante:</span>
+                      <span className="opacity-70">Solicitante:</span>
                       <span className="font-bold">{name}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="opacity-60">WhatsApp / Teléfono:</span>
-                      <span className="font-bold text-purple-200">{phone}</span>
+                      <span className="opacity-70">WhatsApp / Teléfono:</span>
+                      <span className="font-bold text-purple-100">{phone}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="opacity-60">Vínculo:</span>
-                      <span className="font-bold text-purple-300">{relation}</span>
+                      <span className="opacity-70">Vínculo:</span>
+                      <span className="font-bold text-purple-200">{relation}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="opacity-60">Desembolso:</span>
-                      <span className="font-bold text-purple-200">{paymentMethod}</span>
+                      <span className="opacity-70">Desembolso:</span>
+                      <span className="font-bold text-purple-100">{paymentMethod}</span>
                     </div>
                     <div className="flex justify-between pt-2 border-t border-white/10">
-                      <span className="opacity-60">Monto Aprobado:</span>
+                      <span className="opacity-70">Monto Aprobado:</span>
                       <span className="font-mono font-black text-emerald-400 text-sm">{formatCurrency(loanAmount)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="opacity-60">Plazo ({getTermLabel(loanTermDays)}):</span>
+                      <span className="opacity-70">Plazo ({getTermLabel(loanTermDays)}):</span>
                       <span className="font-mono font-bold text-white">{formatCurrency(totalToPay)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="opacity-60">Interés Prorrateado:</span>
-                      <span className="text-purple-300 font-bold">{formatCurrency(totalInterest)} (2.5% mes)</span>
+                      <span className="opacity-70">Interés Prorrateado:</span>
+                      <span className="text-purple-200 font-bold">{formatCurrency(totalInterest)} (2.5% mes)</span>
                     </div>
                   </div>
 
                   <div className="border-t border-white/10 pt-3 flex justify-between items-center gap-4">
                     <div className="space-y-0.5">
-                      <span className="text-[8px] opacity-40 block uppercase">Código QR de Verificación</span>
+                      <span className="text-[8px] opacity-50 block uppercase">Código QR de Verificación</span>
                       <span className="font-mono text-[10px] tracking-widest text-purple-200">CU-COL-{folioNumber}</span>
                     </div>
                     <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center p-1">
-                      <QrCode className="w-full h-full text-purple-950" />
+                      <QrCode className="w-full h-full text-[#24033b]" />
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-2 space-y-4 max-w-sm mx-auto">
                   <p className="text-xs text-slate-500 leading-normal">
-                    Se abrió la ventana de WhatsApp para enviar tu pre-aprobación a <strong className="text-purple-950">+57 3169008561</strong>. Si no se abrió automáticamente, haz clic en el botón a continuación.
+                    Se abrió la ventana de WhatsApp para enviar tu pre-aprobación a <strong className="text-[#191919]">+57 3169008561</strong>. Si no se abrió automáticamente, haz clic en el botón a continuación.
                   </p>
 
                   <a
@@ -450,7 +450,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
                       setPhone('');
                       setTerms(false);
                     }}
-                    className="text-xs text-purple-600 font-bold hover:underline cursor-pointer block mx-auto"
+                    className="text-xs text-[#820ad1] font-bold hover:underline cursor-pointer block mx-auto"
                   >
                     Nueva Solicitud Express
                   </button>
@@ -460,14 +460,14 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
 
             {/* ACTION BUTTONS (STEPS 1-2) */}
             {step < 3 && (
-              <div className="flex items-center justify-between gap-4 pt-4 border-t border-purple-100/60">
+              <div className="flex items-center justify-between gap-4 pt-4 border-t border-[#820ad1]/10">
                 <button
                   onClick={handlePrevStep}
                   disabled={step === 1}
                   className={`px-5 py-3 rounded-2xl border border-slate-200 font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer ${
                     step === 1
                       ? 'opacity-30 cursor-not-allowed text-slate-400'
-                      : 'text-purple-950 hover:bg-slate-50'
+                      : 'text-[#191919] hover:bg-slate-50'
                   }`}
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -476,7 +476,7 @@ export default function WaitlistForm({ initialLoanAmount }: WaitlistFormProps) {
 
                 <button
                   onClick={handleNextStep}
-                  className="px-7 py-3.5 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-purple-200 transition-all cursor-pointer"
+                  className="px-7 py-3.5 rounded-2xl bg-[#820ad1] hover:bg-[#6d08b1] text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-[#820ad1]/25 transition-all cursor-pointer"
                 >
                   {step === 2 ? 'Generar Pre-Aprobación Express' : 'Continuar'}
                   <ArrowRight className="w-4 h-4" />
