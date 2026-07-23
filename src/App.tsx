@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { LoanData } from './types';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import AgreementsSection from './components/AgreementsSection';
+import BenefitsSection from './components/BenefitsSection';
 import WaitlistForm from './components/WaitlistForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -12,7 +14,7 @@ export default function App() {
     loanTerm: 12,
   });
 
-  const [activeTab, setActiveTab] = useState<'inicio' | 'solicitud'>('inicio');
+  const [activeTab, setActiveTab] = useState<'inicio' | 'beneficios' | 'solicitud'>('inicio');
 
   const handleScrollToWaitlist = (loanOverride?: number) => {
     if (loanOverride !== undefined) {
@@ -40,6 +42,14 @@ export default function App() {
 
       {/* Hero Section */}
       <HeroSection
+        onCtaClick={() => handleScrollToWaitlist()}
+      />
+
+      {/* Agreements Box */}
+      <AgreementsSection />
+
+      {/* Benefits Section */}
+      <BenefitsSection
         onCtaClick={() => handleScrollToWaitlist()}
       />
 

@@ -58,6 +58,12 @@ export default function Navbar({ onJoinClick }: NavbarProps) {
             Inicio
           </button>
           <button
+            onClick={() => scrollToSection('beneficios')}
+            className="text-xs font-bold text-white hover:text-purple-200 transition-colors cursor-pointer"
+          >
+            Beneficios
+          </button>
+          <button
             onClick={() => scrollToSection('solicitud')}
             className="text-xs font-bold text-white hover:text-purple-200 transition-colors cursor-pointer"
           >
@@ -103,6 +109,12 @@ export default function Navbar({ onJoinClick }: NavbarProps) {
             className="text-left font-bold text-white py-1 hover:text-purple-200"
           >
             Inicio
+          </button>
+          <button
+            onClick={() => scrollToSection('beneficios')}
+            className="text-left font-bold text-white py-1 hover:text-purple-200"
+          >
+            Beneficios
           </button>
           <button
             onClick={() => scrollToSection('solicitud')}

@@ -39,6 +39,9 @@ export default function Footer() {
                 <a href="#inicio" className="hover:text-white transition-colors">Inicio</a>
               </li>
               <li>
+                <a href="#beneficios" className="hover:text-white transition-colors">Beneficios</a>
+              </li>
+              <li>
                 <a href="#solicitud" className="hover:text-white transition-colors">Pre-Aprobación Express</a>
               </li>
               <li>
