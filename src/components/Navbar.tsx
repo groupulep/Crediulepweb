@@ -74,7 +74,7 @@ export default function Navbar({ onJoinClick }: NavbarProps) {
         {/* Action Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://groupulep.github.io/credito/"
+            href="https://groupulep.github.io/ulepbank/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2.5 rounded-full border border-white/30 hover:border-white text-white font-bold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5 cursor-pointer"
@@ -124,7 +124,7 @@ export default function Navbar({ onJoinClick }: NavbarProps) {
           </button>
           <hr className="border-white/10" />
           <a
-            href="https://groupulep.github.io/credito/"
+            href="https://groupulep.github.io/ulepbank/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
